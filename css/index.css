@@ -7,12 +7,16 @@ body {
   font-weight: 300;
   width: 100%;
 }
+body >aside{
+  color: var(--white);
+  text-align: center;
+}
 :root{
   --black:#00010d;
   --white:white;
   --grey:#151515cd;
   --grey2:#181818;
-  --gold:#FFD700;
+  --gold:#FFD700  ;
   --fundoTexto: #DCDCDC;
   
   --text1:1.3rem;
@@ -65,11 +69,17 @@ footer >img{
   display: flex;
   flex-direction: column;
   align-items: left;
+  gap: .8rem;
 }
 .containerSocialMedia{
   display: flex;
-  justify-content: space-between;
+  justify-content: space-around;
+  margin-top: 1rem;
   margin-bottom: 2.5rem;
+  width: 80%;
+}
+.containerSocialMedia > img{
+  width: 3.5rem;
 }
 
 .containerPresentaion{
@@ -92,23 +102,30 @@ footer >img{
   display: flex;
   flex-direction: column;
   align-items: left;
-  color: var(--white);
+  letter-spacing: 2px;
 }
 .boxTextPresentation aside{
   margin-block: 0rem 1.2rem;
   display: flex;
   flex-direction: column;
   gap: .5rem;
+  color: var(--white);
 }
 .boxTextPresentation p{
+  color: var(--white);
   font-size: var(--text1);
 }
+.boxTextPresentation a{
+  width: 6rem;
+} 
 .boxTextPresentation a button{
   border: .5px white solid;
   background: none;
+  outline: none;
   color: var(--white);
   padding: 10px;
   width: 6rem;
+  font-weight: 300;
 }
 
 
@@ -139,6 +156,7 @@ footer >img{
 .containerDishes{
   position: relative;
   overflow: hidden;
+  width: 100%;
 }
 .containerDishes > img{
   position: absolute;
@@ -152,6 +170,7 @@ footer >img{
   display: flex;
   flex-direction: column;
   position: relative;
+  width: 100%;
 }
 .containerContentDishes h3{
   text-align: center;
@@ -173,7 +192,7 @@ footer >img{
   display: flex;
   flex-direction: row;
   gap: 2rem;
-  max-width: 200%;
+  max-width: 100%;
   overflow-x: scroll;
   padding-inline: 1rem;
 }
@@ -192,14 +211,19 @@ footer >img{
   height: 14rem;
   object-fit: cover;
 }
+.dishesContent p{
+  color: white;
+  font-weight: 500;
+}
 .dishesContent div{
   display: flex;
   
   align-items: center;
   padding-inline: 1rem;
 }
-.dishesContent p{
-  color: white;
+.dishesContent div article article{
+  color: var(--gold);
+  font-size: 1.5rem;
 }
 
 .portugues{
@@ -297,6 +321,7 @@ footer >img{
   align-items: center;
   gap: 1rem;
 }
+
 .boxContentAvaliations{
   margin-block: 1rem 2rem;
   margin-inline: auto;
@@ -304,7 +329,7 @@ footer >img{
   background: var(--grey2);
   padding-block: 2rem 1.3rem;
   position: relative;
-  overflow: hidden;-webkit-box-shadow: -10px 10px 6px 0px black;
+  -webkit-box-shadow: -10px 10px 6px 0px black;
 -moz-box-shadow: -10px 10px 6px 0px black;
 box-shadow: -10px 10px 6px 0px black;
 }
@@ -330,9 +355,12 @@ box-shadow: -10px 10px 6px 0px black;
   justify-content: center;
   width: 80%;
   height: 14rem;
-  margin: 1rem;
   text-align: center;
   margin: 2rem auto;
+}
+.boxContentAvaliations div svg{
+  width: 10rem;
+  height: 10rem;
 }
 .boxContentAvaliations aside{
   display: flex;
@@ -343,36 +371,104 @@ box-shadow: -10px 10px 6px 0px black;
   font-weight: 600;
   font-style: italic;
 }
-
-.containerContact{
-  border: 1px red solid;
-  margin: 2rem auto;
-  width: 80%;
-}
-.containerContact h3{
-  color: var(--gold);
-  font-weight: 500;
+.hideImage{
+  overflow: hidden;
 }
 
-.containerForm{
+.containerModalAvaliation{
+  position: absolute;
+  top: -150%;
+  left: 50%;
+  transform: translate(-65%, -50%);
+  opacity: 0;
+  z-index: -1;
+}
+.containerModalAvaliation form{
+  margin: auto;
   display: flex;
   flex-direction: column;
-  gap: 2rem;
-  background: red;
-}
-
-.boxInput{
-  display: flex;
-  flex-direction: column;
+  gap:.5rem;
   position: relative;
+  background: var(--grey2);
+  width: 20rem;
+  color: var(--white);
+  padding: 3rem .5rem 2rem .5rem;
+  border: .5px var(--gold) solid;
 }
-.boxInput input{
+.containerModalAvaliation form >p{
+  text-align: center;
+  margin: auto;
+  margin-bottom: 1rem;
+}
+.containerModalAvaliation form >svg{
+  position: absolute;
+  object-fit: cover;
+  top: 15px;
+  right: 15px;
+}
+#closeBtn{
+  width: 3rem;
+  height: 3rem;
+}
+.boxInputAvaliation{
+  width: 70%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: .5rem;
+  text-align: left;
+}
+.boxInputAvaliation textarea{
+  border: .5px var(--white) solid;
   background: none;
-  border: .5px white solid;
   outline: none;
+  color: var(--white);
+}
+.boxInputAvaliation input{
+  border: none;
+  background: none;
+  outline: none;
+  border-bottom: .5px var(--white) solid;
+  color: var(--white);
+}
+.boxInputAvaliation input:focus{
+  border: none;
+  border-bottom: .5px var(--gold) solid;
+}
+.boxInputAvaliation input:valid{
+  border: none;
+  border-bottom: .5px var(--gold) solid;
+}
+
+.boxModalStars{
+  text-align: center;
+  unicode-bidi: bidi-override;
+  color: var(--gold);
+  direction: ltr;
+}
+.contentStarsModal{
+  display: inline-block;
+  font-size: 3rem;
+}
+#btnAvaliation{
+  border: .5px var(--gold) solid;
+  background: none;
+  outline: none;
+  color: var(--white);
+  padding: 1rem;
+  margin: auto;
+  white-space: nowrap;
+  transition: .3s ease-in-out;
+}
+#btnAvaliation:disabled{
+  opacity:.5;
+}
+#btnAvaliation:enabled:hover{
+  background: var(--gold);
   color: var(--white);
   margin-bottom: 1.5rem;
   padding: 6px;
+  color: var(--grey);
 }
 .boxInput input:focus{
   border: .5px var(--gold) solid
@@ -396,4 +492,87 @@ box-shadow: -10px 10px 6px 0px black;
   color: var(--white);
   margin-bottom: 1.5rem;
   padding: 6px;
+}
+
+@media screen and (min-width:720px){
+ 
+  .boxTextPresentation a{
+    width: 10rem;
+  }
+  .boxTextPresentation a button{
+    font-size: 1.5rem;
+    width: 10rem;
+    padding: 15px;
+  }
+  .boxTextPresentation p{
+    color: red;
+    font-size: 3rem;
+  }
+  .boxTextPresentation aside{
+    font-size: 2rem;
+  }
+  
+  .containerAboutUsContent{
+    flex-direction: row;
+  }
+  .containerAboutUsContent img{
+    height: 27.5em;
+    width: 50%;
+  }
+  .containerAboutUsContent article{
+    height: 24rem;
+    width: 50%;
+  }
+  
+  .containerBoxContentDifferential{
+    display: flex;
+    justify-content: space-around;
+  }
+  .boxDishesContent{
+    width: 100%;
+    overflow: hidden;
+    gap: 0rem;
+  }
+  .dishesContent{
+    min-width: 25%;
+    height: auto;
+  }
+  
+  .boxContentAvaliations{
+    width: 18rem;
+  }
+  .boxContentAvaliations div{
+    height: 4rem;
+  }
+  .boxContentAvaliations div svg{
+    width: 6rem;
+    height: 6rem;
+  }
+  
+  .contentAvaliations{
+    flex-direction: row;
+    width: 90%;
+    gap: 3rem;
+    padding-inline: 2rem;
+  }
+  
+  footer{
+    flex-direction: row;
+    padding-inline: 5rem;
+    justify-content: space-between;
+    align-items: start;
+  }
+  footer > img{
+    width: 10rem;
+  }
+  .containerContentFooter{
+    justify-content: space-around;
+  }
+  .boxContentFooter{
+    gap: 1rem;
+  }
+  .containerSocialMedia{
+    width: auto;
+    gap: 2rem;
+  }
 }
