@@ -1,3 +1,27 @@
+
+<!--
+<?php
+if(isset($_POST) && count($_POST) > 0) {
+    require_once "../../controllers/ClienteController.php";
+    
+    $c = new Cliente();
+
+    $c->setNome($_POST['inputName']);
+    $c->setPhoneNumber($_POST['inputPhoneNumber']);
+    $c->setDate($_POST['inputDate']);
+    $c->setTextComents($_POST['textComents']);
+
+    $clienteController = new ClienteController();
+
+    $rs = $clienteController->add($c);
+
+    if($rs) {
+        header("location: ./");
+        exit();
+    }
+}
+
+?> -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -271,7 +295,7 @@
       
     </article>
   </div>
-  </div>
+</div>
 
 <div class="containerDiscover">
   <img src="./img/back/location.png" alt="">
@@ -360,12 +384,17 @@
     </article>
     <article class="boxInput">
       <label for="inputPhoneNumber">Insira o seu telefone:</label>
-      <input required type="text" name="inputPhoneNumber" id="inputPhoneNumber" placeholder="00 9 0000-0000" />
+      <input required type="number" name="inputPhoneNumber" id="inputPhoneNumber" placeholder="00 9 0000-0000" />
+    </article>
+
+    <article class="boxInput">
+      <label for="inputDate">Insira a data desejada:</label>
+      <input required type="date" name="inputDate" id="inputDate" placeholder="00 9 0000-0000" />
     </article>
     
     <article class="boxInput">
-      <label for="textComents">Insira o seu telefone:</label>
-      <textarea name="textComents" id="textComents" rows="4" cols="20" placeholder="Gostaria de agendar uma reserva "></textarea>
+      <label for="textComents">Insira os pratos servidos na ocasião:</label>
+      <textarea name="textComents" id="textComents" rows="4" cols="20" placeholder="2 feijodadas e 1 caldo verde..."></textarea>
     </article>
   </form>
 </div>
