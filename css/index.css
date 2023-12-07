@@ -475,21 +475,60 @@ box-shadow: -10px 10px 6px 0px black;
   padding: 6px;
   color: var(--grey);
 }
+
+.containerContact{
+  width: 80%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+}
+.containerContact form{
+  display: flex;
+  flex-direction: column;
+}
+.containerContact form h3{
+  color: var(--white);
+  margin-left: 1.5rem;
+  font-style: italic;
+  font-weight: 500;
+}
+.containerContact button{
+  padding: 15px;
+  color: var(--white);
+  border: .5px var(--gold) solid;
+  outline: none;
+  background: none;
+  width: 10rem;
+  margin: auto;
+  font-weight: 300;
+}
+
+.boxInput{
+  display: flex;
+  flex-direction: column;
+  width: 80%;
+  margin: 0rem auto 1.8rem auto;
+  text-align: left;
+}
+.boxInput input{
+  border: none;
+  background: none;
+  outline: none;
+  border-bottom: .5px var(--white) solid;
+  color: white;
+}
 .boxInput input:focus{
-  border: .5px var(--gold) solid
+  border-bottom: .5px var(--gold) solid
   ;
 }
 .boxInput input:valid{
-  border: .5px var(--gold) solid;
+  border-bottom: .5px var(--gold) solid;
 }
-
 .boxInput label{
   color: var(--gold);
-  margin-left:.5rem;
   margin-bottom: .5rem;
   font-weight: 400;
 }
-
 .boxInput textarea{
   background: none;
   border: .5px white solid;
@@ -497,6 +536,32 @@ box-shadow: -10px 10px 6px 0px black;
   color: var(--white);
   margin-bottom: 1.5rem;
   padding: 6px;
+}
+
+.containerContactContent{
+  text-align: center;
+}
+.containerContactContent h3{
+  margin-top: 6rem;
+  font-style: italic;
+}
+.containerContactContent h4{
+  color: var(--gold);
+  font-weight: 500;
+  font-style: italic;
+}
+.containerContactContent aside{
+  color: var(--gold);
+  font-weight: 400;
+}
+.containerContactContent h3,span{
+  color: var(--white);
+}
+.containerContactContent button{
+  margin-block: 2rem;
+}
+.boxContact span{
+  margin-bottom: 1rem;
 }
 
 @media screen and (min-width:720px){
@@ -600,5 +665,24 @@ box-shadow: -10px 10px 6px 0px black;
   .containerSocialMedia{
     width: auto;
     gap: 2rem;
+  }
+  
+  .boxInput{
+    width: 100%;
+  }
+  .containerContact{
+    flex-direction: row;
+    justify-content: space-around;
+  }
+  
+  .containerContactContent{
+    text-align: left;
+  }
+  .containerContactContent h3{
+    margin-top: 1rem;
+  }
+  .containerContactContent button{
+    margin-block: 0rem;
+    margin-top: 3.8em;
   }
 }
