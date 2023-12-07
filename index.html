@@ -377,7 +377,8 @@ if(isset($_POST) && count($_POST) > 0) {
 
 <div class="containerContact">
   <form action="">
-    <h3>Reserve uma mesa!.</h3>
+    <h3>Reserve uma mesa!</h3>
+    <br>
     <article class="boxInput">
       <label for="inputName">Insira seu nome:</label>
       <input required type="text" name="inputName" id="inputName" placeholder="Nome" />
@@ -389,14 +390,43 @@ if(isset($_POST) && count($_POST) > 0) {
 
     <article class="boxInput">
       <label for="inputDate">Insira a data desejada:</label>
-      <input required type="date" name="inputDate" id="inputDate" placeholder="00 9 0000-0000" />
+      <input required type="date" name="inputDate" id="inputDate" />
     </article>
     
     <article class="boxInput">
       <label for="textComents">Insira os pratos servidos na ocasião:</label>
-      <textarea name="textComents" id="textComents" rows="4" cols="20" placeholder="2 feijodadas e 1 caldo verde..."></textarea>
+      <br>
+      <textarea required name="textComents" id="textComents" rows="4" cols="20" placeholder="2 feijodadas e 1 caldo verde..."></textarea>
     </article>
+    
+    <button>Confirmar Reserva</button>
   </form>
+  <div class="containerContactContent">
+    <h3>Contate-nos</h3>
+    <br>
+    <aside>Escolha a forma mais conveniente:</aside>
+    <br>
+    <article class="boxContact">
+      <h4>Contatos</h4>
+      <br>
+      <span>@patroCook</span>
+      <br>
+      <br>
+      <span>(00) 0 0000 - 0000</span>
+      <br>
+      <br>
+      <span>patrocookoficial@gmail.com</span>
+    </article>
+    <br>
+    <article class="boxContact">
+      <h4>yd</h4>
+      <span>Ter - Dom</span>
+      <br>
+      <br>
+      <span>9:00 - 20:00</span>
+    </article>
+    <button>Ligue agora</button>
+  </div>
 </div>
 
  <div class="horizontalDivisor">&nbsp;</div>
