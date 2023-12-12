@@ -1,7 +1,7 @@
 
 <?php
 
-require_once "../../models/ProdutoModel.php";
+require_once "reservaModel.php";
 
 class reservaController {
 
@@ -20,16 +20,8 @@ class reservaController {
         return $this->model->create($c);
     }
 
-    public function edit(reserva $c) {
-        return $this->model->update($c);
-    }
-
-    public function findId($id) {
-        return $this->model->findId($id);
-    }
-
-    public function remove($id) {
-        return $this->model->delete($id);
+    public function findId($mesa) {
+        return $this->model->findId($mesa);
     }
 
 }

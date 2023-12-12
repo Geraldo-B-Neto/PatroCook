@@ -1,26 +1,25 @@
 <?php
 
 require_once "Conexao.php";
-require_once "reserva.php";
+require_once "Reserva.php";
 
 class reservaModel
 {
 
-    public $tabela = "reservas";
+    public $tabela = "reserva";
 
-    public function create(reserva $c)
+    public function create(Reserva $c)
     {
         try {
-            $sql = "insert into $this->tabela (nome, valor, codigo, quantidade, descricao, categoria_id) 
-                values (?, ?, ?, ?, ?, ?)";
+
+            $sql = "insert into $this->tabela (nome, telefone, data, descricao)  
+                values (?, ?, ?, ?)";
 
             $stmt = Conexao::getConn()->prepare($sql);
             $stmt->bindValue(1, $c->getNome());
-            $stmt->bindValue(2, $c->getValor());
-            $stmt->bindValue(3, $c->getCodigo());
-            $stmt->bindValue(4, $c->getQuantidade());
-            $stmt->bindValue(5, $c->getDescricao());
-            $stmt->bindValue(6, $c->getCategoria_id());
+            $stmt->bindValue(2, $c->getTelefone());
+            $stmt->bindValue(3, $c->getData());
+            $stmt->bindValue(4, $c->getDescricao());
 
             return $stmt->execute();
         } catch (PDOException $Exception) {
@@ -33,7 +32,7 @@ class reservaModel
     public function read()
     {
         $stmt = Conexao::getConn()->prepare("select * from $this->tabela");
-        $stmt->setFetchMode(PDO::FETCH_CLASS, 'reserva');
+        $stmt->setFetchMode(PDO::FETCH_CLASS, 'Reserva');
         $stmt->execute();
         return $stmt->fetchAll();
     }
@@ -42,40 +41,38 @@ class reservaModel
     {
         $stmt = Conexao::getConn()->prepare("select * from $this->tabela where id=?");
         $stmt->bindValue(1, $id);
-        $stmt->setFetchMode(PDO::FETCH_CLASS, 'reserva');
+        $stmt->setFetchMode(PDO::FETCH_CLASS, 'Reserva');
         $stmt->execute();
         return $stmt->fetch();
     }
 
-    public function update(reserva $c)
+    public function update(Reserva $c)
     {
         try {
-            $sql = "update $this->tabela set nome=?, valor=?, codigo=?, quantidade=?, descricao=?, categoria_id=? where id=?";
+            $sql = "update $this->tabela set nome=?, telefone=?, data=?, descricao=? where id=?";
 
             $stmt = Conexao::getConn()->prepare($sql);
             $stmt->bindValue(1, $c->getNome());
-            $stmt->bindValue(2, $c->getValor());
-            $stmt->bindValue(3, $c->getCodigo());
-            $stmt->bindValue(4, $c->getQuantidade());
-            $stmt->bindValue(5, $c->getDescricao());
-            $stmt->bindValue(6, $c->getCategoria_id());
-            $stmt->bindValue(7, $c->getId());
+            $stmt->bindValue(2, $c->getTelefone());
+            $stmt->bindValue(3, $c->getData());
+            $stmt->bindValue(4, $c->getDescricao());
+            $stmt->bindValue(5, $c->getId());
 
             return $stmt->execute();
         } catch (PDOException $Exception) {
             // Note The Typecast To An Integer!
-            throw new PDOException($Exception->getMessage(), (int)$Exception->getCode());
+            //throw new PDOException($Exception->getMessage(), (int)$Exception->getCode());
             echo "Erro: " . $Exception->getMessage();
             echo "Número: " . (int)$Exception->getCode();
         }
     }
-    public function delete($id)
+    /* public function delete($mesa)
     {
         try {
-            $sql = "delete from $this->tabela where id=?";
+            $sql = "delete from $this->tabela where mesa=?";
 
             $stmt = Conexao::getConn()->prepare($sql);
-            $stmt->bindValue(1, $id);
+            $stmt->bindValue(1, $mesa);
 
             return $stmt->execute();
         } catch (PDOException $Exception) {
@@ -84,5 +81,5 @@ class reservaModel
             echo "Erro: " . $Exception->getMessage();
             echo "Número: " . (int)$Exception->getCode();
         }
-    }
+    } */
 }
