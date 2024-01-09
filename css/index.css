@@ -43,8 +43,22 @@ header{
 .containerHeaderContent{
   display: flex;
   justify-content: space-between;
+  align-items: center;
+  background: var(--black);
+  padding-inline: 2rem;
 }
-
+.containerHeaderContent a, aside{
+  color: var(--white);
+  text-decoration: none;
+}
+.containerHeaderContent a img{
+  width: 4rem;
+  height: 4rem;
+  object-fit: cover;
+}
+.boxHeaderLinks{
+  gap: 1.5rem;
+}
 footer{
   background-color: var(--black);
   color: var(--white);
@@ -575,7 +589,6 @@ box-shadow: -10px 10px 6px 0px black;
     padding: 15px;
   }
   .boxTextPresentation p{
-    color: red;
     font-size: 3rem;
   }
   .boxTextPresentation aside{
@@ -685,4 +698,4 @@ box-shadow: -10px 10px 6px 0px black;
     margin-block: 0rem;
     margin-top: 3.8em;
   }
-}
+  }
