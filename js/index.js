@@ -1,5 +1,3 @@
-
-
 var modal = document.querySelector(' .containerModalAvaliation');
 
 function openModal(){
@@ -79,4 +77,4 @@ function starFocus(avaliation){
         document.querySelector('#btnAvaliation').disabled = false;
     }
 
-});
+})
