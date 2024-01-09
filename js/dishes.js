@@ -58,12 +58,4 @@ function revealIT(){ 
   {    
     boxIT[i].style.display = 'block';  
   }
-}
-
-
-
-
-
-
-
-
+      }
