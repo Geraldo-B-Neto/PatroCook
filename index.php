@@ -51,34 +51,34 @@ if (isset($_POST) && count($_POST) > 0) {
 
 <body>
 
-  <header>
+   <header>
 
-    <div class="containerHeaderContent">
+  <div class="containerHeaderContent">
 
-      <a href="#"><img src="#" alt="logo"></img></a>
-      <div class="boxHeaderLinks">
-        <a href="#">Home</a>
-        <a href="#">Cardápio</a>
-        <a href="#">Reservas</a>
-        <a href="#">Equipe</a>
-      </div>
-      <div class="boxContacIcons">
-        <a href=""><img src="" alt="facebook"></img></a>
-        <a href=""><img src="" alt="instagram"></img></a>
-        <article>
-          <a href=""><img src="" alt=""></img></a>
-          <aside>
-            9717-0471
-          </aside>
-        </article>
-      </div>
+      <a href="#"><img src="./img/details/logo.svg" alt="logo"></img></a>
+    <div class="boxHeaderLinks">
+      <a href="#">Home</a>
+      <a href="#">Cardápio</a>
+      <a href="#">Reservas</a>
+      <a href="#">Equipe</a>
     </div>
-  </header>
+    <div class="boxContacIcons">
+      <a href=""><i class="fa fa-facebook"></i></a>
+    <a href=""><i class="fa fa-instagram"></i></a>
+  <article>
+    <a href=""><i class="fa-solid fa-phone-volume"></i></a>
+  <aside>
+    9717-0471
+  </aside>
+</article>
+</div>
+</div>
+</header>
 
   <div class="containerPresentaion">
     <img src="./img/back/presentationImg2.png" alt="s"></img>
     <article class="boxTextPresentation">
-      <p>A melhor comida <br> de Patrocínio? Aqui<br> no PatroCock
+      <p>A melhor comida <br> de Patrocínio? Aqui<br> no PatroCook
       </p>
       <aside>
         <span>9:00 - 20:00</span>
@@ -221,10 +221,10 @@ if (isset($_POST) && count($_POST) > 0) {
           <img src="./img/foods/churros3.png" alt="dish"></img>
           <div>
             <article>
-              <h3><i>Porra Recheada</i></h3>
+              <h3><i>Churros Recheados</i></h3>
               <article> <span>&#9733;</span> <span>&#9733;</span> <span>&#9733;</span> <span>&#9733;</span>
                 <span>&#9733;</span> </article>
-              <p>Deliciosos, açucarados, crocantes por fora e super recheados por dentro, as porras são tradicionais na
+              <p>Deliciosos, açucarados, crocantes por fora e super recheados por dentro, os churros são tradicionais na
                 Euroupa. Elas são normalmente consumidos no café da manhã mergulhados em chá, chocolate quente, doce de
                 leite ou café com leite. 
               </p>
@@ -363,7 +363,7 @@ if (isset($_POST) && count($_POST) > 0) {
           </article>
         </aside>
         <p class="textAvaliations">
-          Adorei a comida, principalmente a porra, tava realmente bem recheada.
+          Adorei a comida, principalmente os churros, estavam realmente bem recheados.
         </p>
       </article>
       <article class="boxContentAvaliations hideImage">
